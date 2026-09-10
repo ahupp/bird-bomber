@@ -11,7 +11,7 @@ GROUND_HEIGHT = 50;
 function setup() {
   createCanvas(windowWidth, windowHeight);
   for (let i = 0; i < NUM_ENEMIES; i++) {
-    drops.push(new Enemy(random(0, windowWidth), random(0, windowHeight - GROUND_HEIGHT)));
+    drops.push(new Enemy(random(0, windowWidth)));
   }
 
 }
@@ -23,9 +23,8 @@ function ground() {
 }
 
 class Enemy {
-  constructor(x, y) {
+  constructor(x) {
     this.x = x;
-    this.y = y;
   }
 
   draw() {
@@ -98,8 +97,9 @@ function draw() {
   for (let e of enemies) {
     let hit = false;
     for (let ex of explodes) {
-      let dist = Math.sqrt((e.x - ex.x) ** 2 + (e.y - ex.y) ** 2);
-      console.log("Distance", dist);
+      //let dist = Math.sqrt((e.x - ex.x) ** 2 + (e.y - ex.y) ** 2);
+      let dist = Math.abs(e.x - ex.x);
+      console.log("Distance", dist, e, ex);
       if (dist < ex.radius(ticks)) {
         console.log("Enemy hit by explosion", e, ex);
         drops = drops.filter((d) => d !== e);
