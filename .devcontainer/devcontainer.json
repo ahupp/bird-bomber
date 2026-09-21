@@ -1,14 +1,25 @@
 {
   "name": "Bird Bomber",
   "image": "mcr.microsoft.com/devcontainers/python:3.12-bookworm",
-  "forwardPorts": [
-    8000
-  ],
-  "portsAttributes": {
-    "8000": {
-      "label": "Play Bird Bomber",
-      "onAutoForward": "openBrowser"
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.live-server"
+      ]
     }
   },
-  "postStartCommand": "nohup python3 -m http.server 8000 --bind 0.0.0.0 --directory . > /tmp/bird-bomber.log 2>&1 < /dev/null &"
+  "forwardPorts": [
+    3000,
+    3001
+  ],
+  "portsAttributes": {
+    "3000": {
+      "label": "Play Bird Bomber",
+      "onAutoForward": "silent"
+    },
+    "3001": {
+      "label": "Live Preview reload",
+      "onAutoForward": "silent"
+    }
+  }
 }
