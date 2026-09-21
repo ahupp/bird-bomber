@@ -3,5 +3,17 @@
   "livePreview.defaultPreviewPath": "/index.html",
   "livePreview.openPreviewTarget": "Embedded Preview",
   "livePreview.portNumber": 3000,
-  "livePreview.serverRoot": "."
+  "livePreview.serverRoot": ".",
+  "remote.autoForwardPorts": true,
+  "remote.autoForwardPortsSource": "process",
+  "remote.portsAttributes": {
+    "3000": {
+      "label": "Play Bird Bomber",
+      "onAutoForward": "openPreview"
+    },
+    "3001": {
+      "label": "Live Preview reload",
+      "onAutoForward": "silent"
+    }
+  }
 }

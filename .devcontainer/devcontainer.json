@@ -15,7 +15,7 @@
   "portsAttributes": {
     "3000": {
       "label": "Play Bird Bomber",
-      "onAutoForward": "silent"
+      "onAutoForward": "openPreview"
     },
     "3001": {
       "label": "Live Preview reload",
